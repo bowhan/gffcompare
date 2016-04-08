@@ -380,14 +380,14 @@ int main(int argc, char * const argv[]) {
     if (tmapFiles) {
         //-- we should keep the infname path, otherwise the remaining file names 
         //   may be the same and clobber each other
-        s=sbase;
+        s=outbasename + '.' + infname;
         s.append(".tmap");
         tfiles[fi]=fopen(s.chars(),"w");
         if (tfiles[fi]==NULL)
           GError("Error creating file '%s'!\n",s.chars());
         fprintf(tfiles[fi],"ref_gene_id\tref_id\tclass_code\tqry_gene_id\tqry_id\tFMI\tFPKM\tFPKM_conf_lo\tFPKM_conf_hi\tcov\tlen\tmajor_iso_id\tref_match_len\n");
         if (haveRefs) {
-          s=sbase;
+          s=outbasename + '.' + infname;
           s.append(".refmap");
           rtfiles[fi]=fopen(s.chars(),"w");
           if (rtfiles[fi]==NULL)
