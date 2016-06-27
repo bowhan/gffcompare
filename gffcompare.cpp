@@ -234,7 +234,7 @@ int main(int argc, char * const argv[]) {
 	  numqryfiles=args.startNonOpt();
 	  char *infile=NULL;
 	  if (numqryfiles>0) {
-		  if (numqryfiles>6)
+		  if (numqryfiles>16)
 			  gtf_tracking_largeScale=true;
 		  while ((infile=args.nextNonOpt())!=NULL) {
 			  if (!fileExists(infile)) GError("Error: cannot locate input file: %s\n", infile);
